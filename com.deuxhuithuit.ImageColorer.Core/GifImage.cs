@@ -14,7 +14,7 @@ namespace com.deuxhuithuit.ImageColorer.Core
 	public class GifImage
 	{
 
-		public static void CreateGifImage(ref Image refImage, ref Image destImage)
+        public static void CreateGifImage(Image refImage, ref Image destImage)
 		{
 			// Copy the palette to assure colors follow
 			destImage.Palette = refImage.Palette;
@@ -42,17 +42,17 @@ namespace com.deuxhuithuit.ImageColorer.Core
 			((Bitmap)destImage).UnlockBits(dst);
 		}
 
-		public static Image CreateGifImage(ref Image refImage)
+		public static Image CreateGifImage(Image refImage)
 		{
 			//Create a new 8 bit per pixel image
-			Bitmap bm = new Bitmap(refImage.Width, refImage.Height, PixelFormat.Format8bppIndexed);
+			Image bm = new Bitmap(refImage.Width, refImage.Height, PixelFormat.Format8bppIndexed);
 
-			CreateGifImage(ref refImage, ref bm);
+            CreateGifImage(refImage, ref bm);
 
 			return bm;
 		}
 
-		public static void ReplaceColorInPalette(ref Image refImage, ColorPalette refPalette, Color victimColor, Color newColor)
+		public static void ReplaceColorInPalette(Image refImage, ColorPalette refPalette, Color victimColor, Color newColor)
 		{
 			//get it's palette
 			ColorPalette ncp = refPalette;
@@ -78,12 +78,12 @@ namespace com.deuxhuithuit.ImageColorer.Core
 			refImage.Palette = ncp;
 		}
 
-		public static void ConverToGifImageWithNewColor(ref Image refImage, ColorPalette refPalette, Color victimColor, Color newColor)
+		public static void ConverToGifImageWithNewColor(Image refImage, ColorPalette refPalette, Color victimColor, Color newColor)
 		{
-			ReplaceColorInPalette(ref refImage, refPalette, victimColor, newColor);
+			ReplaceColorInPalette(refImage, refPalette, victimColor, newColor);
 
 			// Rewrite the bitmap data in a new image
-			Image gifImage = Core.GifImage.CreateGifImage(ref refImage);
+			Image gifImage = Core.GifImage.CreateGifImage(refImage);
 
 			refImage.Dispose();
 
