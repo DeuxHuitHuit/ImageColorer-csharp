@@ -1,0 +1,1 @@
+﻿<%@ WebHandler Language="C#" CodeBehind="GifHandler.ashx.cs" Class="com.deuxhuithuit.ImageColorer.WebApp.Handlers.GifHandler" %>
