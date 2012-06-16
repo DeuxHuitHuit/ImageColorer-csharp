@@ -1,8 +1,4 @@
-﻿//INSTANT C# NOTE: The following line has been commented since C# non-aliased 'using' statements only operate on namespaces:
-//using System.Console;
-
-//INSTANT C# NOTE: Formerly VB project-level imports:
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
@@ -129,7 +125,7 @@ namespace com.deuxhuithuit.ImageColorer.Console
 			Image newImage = (Image)refImage.Clone();
 
 			// Convert to gif with new color
-			Core.GifImage.ConverToGifImageWithNewColor(ref newImage, refImage.Palette, victim, Color.FromArgb(255, r, g, b));
+			Core.GifImage.ConverToGifImageWithNewColor(newImage, refImage.Palette, victim, Color.FromArgb(255, r, g, b));
 
 			// Sage this gif image
 			SaveGifImage(ref newImage, r, g, b);
