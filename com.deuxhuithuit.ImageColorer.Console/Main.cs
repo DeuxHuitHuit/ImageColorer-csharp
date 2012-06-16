@@ -14,7 +14,7 @@ using System.Runtime.InteropServices;
 
 namespace com.deuxhuithuit.ImageColorer.Console
 {
-	internal static class Main
+	internal static class MainProgram
 	{
 
 		private const string HEX_COLOR_FORMAT_32 = "{0}{1:X2}{2:X2}{3:X2}.{4}"; // color is 16 bits
@@ -31,10 +31,9 @@ namespace com.deuxhuithuit.ImageColorer.Console
 		private static string colorFormat = HEX_COLOR_FORMAT_16;
 		private static int stepper = 256 / COLOR_FORMAT;
 
-		public static void Main()
+		public static void Main(string[] args)
 		{
 			parseArgs();
-
 			Microsoft.VisualBasic.FileSystem.WriteLine("Welcome in Deux Huit Huit's ImageColorer");
 			Microsoft.VisualBasic.FileSystem.WriteLine();
 			Microsoft.VisualBasic.FileSystem.WriteLine("File: {0}", file);

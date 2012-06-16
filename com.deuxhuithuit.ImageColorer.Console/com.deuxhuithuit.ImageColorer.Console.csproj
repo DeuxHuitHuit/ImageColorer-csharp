@@ -9,7 +9,7 @@
     </SchemaVersion>
     <ProjectGuid>{3E9F0CCB-BABA-4093-9A1A-245382ACA518}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>com.deuxhuithuit.ImageColorer.Console.Main</StartupObject>
+    <StartupObject>com.deuxhuithuit.ImageColorer.Console.MainProgram</StartupObject>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>com.deuxhuithuit.ImageColorer.Console</RootNamespace>
     <AssemblyName>com.deuxhuithuit.ImageColorer.Console</AssemblyName>
