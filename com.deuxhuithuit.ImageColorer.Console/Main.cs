@@ -125,7 +125,7 @@ namespace com.deuxhuithuit.ImageColorer.Console
 			Image newImage = (Image)refImage.Clone();
 
 			// Convert to gif with new color
-			Core.GifImage.ConverToGifImageWithNewColor(newImage, refImage.Palette, victim, Color.FromArgb(255, r, g, b));
+			Core.GifImage.ConverToGifImageWithNewColor(ref newImage, refImage.Palette, victim, Color.FromArgb(255, r, g, b));
 
 			// Sage this gif image
 			SaveGifImage(ref newImage, r, g, b);
@@ -157,10 +157,9 @@ namespace com.deuxhuithuit.ImageColorer.Console
 				fileInfo.Delete();
 			}
 
-			newImage.Save(fileInfo.FullName, System.Drawing.Imaging.ImageFormat.Gif);
+			newImage.Save(fileInfo.FullName.Replace("\\","/"));
 
 			System.Console.WriteLine(" - File {0} as been created!", fileInfo.Name);
 		}
 	}
-
 }
